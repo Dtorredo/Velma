@@ -43,16 +43,22 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: var(--body-font);
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.6;
   margin: 0;
 }
 
+
+
+
 .display-header h2 {
   font-size: 1.5rem; /* Adjust as needed */
 }
+
+
+
 
 p {
   font-size: 1.2em;
