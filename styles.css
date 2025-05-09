@@ -623,27 +623,41 @@ h3.cart-title {
 
 /* 2. Billboard
 /*----------------------------------------------*/
-/*------------Swiper Arrow -----------*/
-#billboard .swiper-arrow {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
+
+#billboard {
+  padding-top: 150px; 
 }
-.swiper-icon.swiper-arrow svg {
-  fill: var(--light-gray-color);
+.image-holder img {
+  max-width: 100%;
+  max-height: 400px; 
+  height: auto;
+  object-fit: contain; 
 }
-.swiper-icon.swiper-arrow:hover svg,
-.swiper-icon.swiper-arrow:focus svg {
-  fill: var(--primary-color);
+
+.banner-content h1 {
+  font-size: 2rem;  
+  line-height: 1.2;
+  padding-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
 }
-#billboard .swiper-arrow.swiper-arrow-prev {
-  left: 0;
+
+.btn-medium {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #4dc7f3; 
+  border: none;
+  border-radius: 20px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
 }
-#billboard .swiper-arrow.swiper-arrow-next {
-  right: 0;
+
+.btn-medium:hover {
+  background-color: #36a7d3; 
+  transform: translateY(-2px);
 }
 
 @media only screen and (max-width: 767px) {
@@ -653,18 +667,30 @@ h3.cart-title {
   #billboard .image-holder {
     margin-top: -390px;
     opacity: 0.3;
+    
   }
   #billboard .swiper-arrow {
     top: 400px;
   }
 }
 
-/* 3. Icon Box - Company Services
+/* 3. Company Services
 /*----------------------------------------------*/
 .icon-box .icon-box-icon svg {
   width: 26px;
   height: 26px;
   fill: var(--primary-color);
+}
+
+#company-services .card-title {
+  font-size: 1rem; 
+  margin-bottom: 0.5rem;
+}
+
+#company-services .icon-box-content p {
+  font-size: 1rem; 
+  line-height: 1.4;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 991px) {
@@ -673,8 +699,34 @@ h3.cart-title {
   }
 }
 
-/* 4. Product
-/*----------------------------------------------*/
+/* ========== Product Card Styling ========== */
+.product-store .product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Image Styling (make images bigger while keeping rounded corners) */
+.product-card .image-holder img {
+  width: 100%; /* Adjust to fill the container */
+  height: auto;
+  display: block;
+  
+}
+
+/* Product Details */
+.product-card .card-title {
+  font-size: 0.95rem;
+  margin-left: 20px;
+}
+.product-card .card-detail span {
+  font-size: 1em;
+  margin-right: 20px;
+}
+
+/* Add to Cart Button Reveal */
 .product-store .product-card .cart-concern {
   bottom: 75px;
   width: 100%;
@@ -695,24 +747,38 @@ h3.cart-title {
   fill: var(--light-color);
   margin-left: 9px;
 }
-.product-card .card-detail span {
-  font-size: 1.5em;
+
+/* ========== Buttons ========== */
+.btn.btn-medium,
+.cart-button .btn-black,
+.btn-right .btn-normal {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  background-color: #5da8d3;
+  color: #fff;
+  border: none;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+.btn.btn-medium:hover,
+.cart-button .btn-black:hover,
+.btn-right .btn-normal:hover {
+  background-color: #468bb3;
 }
 
-@media only screen and (max-width: 575px) {
-  .product-store .product-card .card-detail {
-    padding: 10px;
-  }
+/* ========== Swiper Layout (make slides wider for bigger images) ========== */
+.product-store .swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
 }
-
-/*------------Swiper Pagination -----------*/
-.product-store
-  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: 35px;
+.product-store .swiper-slide {
+  flex: 0 0 auto;
+  width: 220px !important; /* Increase this value to make images bigger */
+  margin-right: 16px;
 }
-.swiper-pagination span.swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
+.product-swiper {
+  overflow-x: auto;
 }
 
 /* 5. Testimonial
