@@ -690,8 +690,8 @@ h3.cart-title {
   opacity: 1;
 }
 .product-card .cart-concern svg {
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   fill: var(--light-color);
   margin-left: 9px;
 }
