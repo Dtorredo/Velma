@@ -7,7 +7,7 @@
   --gray-color-500: #aeaeae;
   --gray-color-800: #3a3a3a;
   --light-gray-color: #d7dddf;
-  --primary-color: #72aec8;
+  --primary-color: #4dc7f3;
   --bs-primary-rgb: 114, 174, 200;
   --light-color: #f8f9fa;
   --dark-color: #212529;
@@ -342,7 +342,9 @@ h3.cart-title {
 .search-box {
   background: var(--gray-color);
   position: relative;
+  z-index: 10;
 }
+
 .close-button {
   position: absolute;
   top: 20px;
@@ -350,24 +352,31 @@ h3.cart-title {
   cursor: pointer;
   z-index: 9;
 }
-.search-box input.search-input {
-  font-size: 1.3em;
+
+.search-box input.search-input, .search-field {
+  font-size: 0.9em;
+  color: black; 
   width: 70%;
   height: 30px;
-  padding: 25px;
+  padding: 15px; 
   border-radius: 80px;
   border-color: rgb(0 0 0 / 25%);
   background: transparent;
 }
+
 .search-box svg {
   width: 22px;
   height: 22px;
-  color: var(--primary-color);
+  color: var(--primary-color); 
 }
+
 .search-box svg.search {
   margin-left: -50px;
 }
 
+.search-box input.search-input::placeholder {
+  color: black; 
+}
 /** Search Form
 --------------------------------------------------------------*/
 .search-form input[type="search"].search-field {
@@ -576,18 +585,32 @@ h3.cart-title {
   z-index: 10;
   transition: background 0.3s ease-out;
 }
+
+.site-header {
+  height: 80px;
+  line-height: 60px; 
+  overflow: hidden;
+}
+
 .navbar-toggler svg.navbar-icon {
   width: 50px;
   height: 50px;
 }
 .navbar-nav .nav-item a.nav-link {
-  color: var(--accent-color);
+  color: #000;
 }
 .navbar-nav .nav-item a.nav-link.active,
 .navbar-nav .nav-item a.nav-link:focus,
 .navbar-nav .nav-item a.nav-link:hover {
   color: var(--primary-color);
 }
+
+.navbar-nav .nav-link {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
 
 /*------------ Offcanvas -------------- */
 #header-nav .navbar-toggler:focus {
@@ -607,7 +630,11 @@ h3.cart-title {
   align-items: unset !important;
   padding-left: 20px;
 }
-
+@media (max-width: 768px) {
+  .navbar-nav .nav-item .nav-link {
+    font-size: 14px !important; 
+  }
+}
 /*------------ Top User Icons -----------*/
 .site-header .user-items svg {
   width: 18px;
@@ -615,9 +642,10 @@ h3.cart-title {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 991px) {
-  #navbar .user-items {
-    display: none;
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 12px; 
+    padding: 6px 10px; 
   }
 }
 
@@ -699,7 +727,7 @@ h3.cart-title {
   }
 }
 
-/* ========== Product Card Styling ========== */
+/* ========== 4. Product Card Styling ========== */
 .product-store .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -708,15 +736,18 @@ h3.cart-title {
   overflow: hidden;
 }
 
-/* Image Styling (make images bigger while keeping rounded corners) */
+.item-price {
+  color: #4dc7f3 !important;
+}
+
 .product-card .image-holder img {
-  width: 100%; /* Adjust to fill the container */
+  width: 100%; 
   height: auto;
   display: block;
   
 }
 
-/* Product Details */
+
 .product-card .card-title {
   font-size: 0.95rem;
   margin-left: 20px;
@@ -726,7 +757,7 @@ h3.cart-title {
   margin-right: 20px;
 }
 
-/* Add to Cart Button Reveal */
+
 .product-store .product-card .cart-concern {
   bottom: 75px;
   width: 100%;
@@ -755,7 +786,7 @@ h3.cart-title {
   font-size: 0.75rem;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
-  background-color: #5da8d3;
+  background-color: #4dc7f3;
   color: #fff;
   border: none;
   transition: background 0.3s;
@@ -767,124 +798,193 @@ h3.cart-title {
   background-color: #468bb3;
 }
 
-/* ========== Swiper Layout (make slides wider for bigger images) ========== */
+/* ========== slides wider for bigger images ========== */
 .product-store .swiper-wrapper {
   display: flex;
   flex-wrap: nowrap;
 }
 .product-store .swiper-slide {
   flex: 0 0 auto;
-  width: 220px !important; /* Increase this value to make images bigger */
+  width: 220px !important; 
   margin-right: 16px;
 }
 .product-swiper {
   overflow-x: auto;
 }
 
+
 /* 5. Testimonial
 /*----------------------------------------------*/
-.review-item blockquote {
-  font-size: 2.5em;
-  font-weight: 300;
-  line-height: 1.2;
-}
-.rating svg.star {
-  width: 16px;
-  height: 16px;
-  fill: var(--primary-color);
-}
-#testimonials .swiper-arrow svg {
-  width: 45px;
-  height: 45px;
-  fill: var(--light-gray-color);
-}
-.review-content .swiper-arrow {
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-}
-.review-content .swiper-arrow.swiper-arrow-next {
-  right: 0;
-}
-.review-content .quotation svg.quote {
-  color: var(--light-blue-color);
-}
 
-@media only screen and (max-width: 767px) {
-  #testimonials blockquote {
-    font-size: 2em;
-  }
-  .review-content .swiper-arrow {
-    bottom: -420px;
-  }
-}
-
-/* 6. Subscribe
-/*----------------------------------------------*/
-.subscribe-content p {
-  color: var(--gray-color-500);
-}
-
-@media only screen and (max-width: 1199px) {
-  .subscription-form input.form-control,
-  .subscription-form button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-/* 7. Instagram
-/*----------------------------------------------*/
-#instagram figure.instagram-item {
-  width: 20%;
-}
-figure.instagram-item img.insta-image {
-  width: 100%;
+.review-item {
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6fa3ef, #ffffff);
+  position: relative;
   height: 100%;
-  object-fit: cover;
-}
-.instagram-item .icon-overlay {
-  top: 30px;
-  left: 0;
-  width: 100%;
-  height: auto;
-  color: var(--light-color);
-  opacity: 0;
-  transition: 0.9s ease-out;
-}
-.instagram-item:hover .icon-overlay {
-  top: 0;
-  opacity: 1;
-}
-.instagram-item .icon-overlay svg.instagram {
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 
+.review-item blockquote {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: italic;
+  color: white;
+  margin: 1rem 0;
+}
+
+.review-item .name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Quotation Icon Styling */
+.quotation svg.quote {
+  width: 24px;
+  height: 24px;
+  fill: var(--light-blue-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Star Rating Styling */
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 1rem;
+}
+
+.testimonial-rating svg.star {
+  width: 20px;
+  height: 20px;
+  fill: #fdd835; 
+  margin: 0 2px;
+}
+
+
+/* Section Padding */
+#testimonials {
+  padding: 60px 0;
+}
+
+/* Mobile Adjustments */
 @media only screen and (max-width: 767px) {
-  #instagram figure.instagram-item {
-    width: 30%;
+  .review-item blockquote {
+    font-size: 1.1rem;
+  }
+
+  .rating svg.star {
+    width: 14px;
+    height: 14px;
   }
 }
 
-@media only screen and (max-width: 501px) {
-  #instagram figure.instagram-item {
-    width: 100%;
-  }
+/* 6. shipments
+/*----------------------------------------------*/
+
+#latest-shipments .card-title a {
+  font-size: 0.9rem;
 }
 
-/* 8. Footer
+#latest-shipments .card-meta {
+  font-size: 0.75rem;
+}
+
+
+
+/* 7. Footer
 /*----------------------------------------------*/
 /*------------ Social Icon -----------*/
 .social-links svg {
-  width: 20px;
-  height: 20px;
-  color: var(--light-gray-color);
+  width: 42px;
+  height: 42px;
+  fill: #0077b6;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.4s ease;
+  box-sizing: border-box;
 }
+
 .social-links svg:hover {
-  color: var(--primary-color);
+  background-color: #ffffff;
+  fill: #0077b6;
+  transform: scale(1.1);
 }
+
 .social-links li {
-  padding-right: 30px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+
+.footer-wrapper {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #000; 
+}
+
+.footer-wrapper h5,
+.footer-wrapper .widget-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-wrapper a {
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-wrapper a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.footer-wrapper p,
+.footer-wrapper li {
+  font-size: 13px;
+  margin-bottom: 0.4rem;
+}
+
+.footer-wrapper .social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: #555;
+  transition: fill 0.3s ease;
+}
+
+.footer-wrapper .social-links svg:hover {
+  fill: #000;
+}
+
+.card-wrap img {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+}
+#footer-bottom p {
+  color: black;
+}
+
+#footer .footer-menu p,
+#footer .social-links ul li a,
+#footer .footer-menu h5 {
+  color: black;
+}
+
+#footer .footer-menu p {
+  margin-top: 20px; /* Adjust as needed */
 }
 
 /* 9. About Us Page
@@ -1038,29 +1138,3 @@ figure.instagram-item img.insta-image {
   width: 30%;
 }
 
-/* 11. Checkout Page
---------------------------------------------------------------*/
-.list-group-item span {
-  font-size: 1.2em;
-}
-
-/* 12. Blog Page
---------------------------------------------------------------*/
-/*------------ Sidebar -----------*/
-.sidebar-post-item h4.card-title {
-  font-size: 1.2em;
-}
-
-/* 13. Sibgle Post Page
---------------------------------------------------------------*/
-#single-post-navigation .post-navigation span.page-nav-title {
-  font-size: 1.5em;
-}
-.post-navigation svg {
-  width: 30px;
-  height: 45px;
-}
-.post-navigation:hover svg,
-.post-navigation:focus svg {
-  fill: var(--primary-color);
-}
