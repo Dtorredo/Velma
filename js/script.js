@@ -112,6 +112,6 @@
         },
       }); 
 
-    }); // End of a document ready
+    }); 
 
 })(jQuery);

@@ -26,7 +26,6 @@
   }
 }
 
-/* Fonts */
 :root {
   --body-font: "Lato", sans-serif;
   --heading-font: "Jost", sans-serif;
@@ -48,17 +47,12 @@ body {
   font-weight: 300;
   line-height: 1.6;
   margin: 0;
+  
 }
-
-
-
 
 .display-header h2 {
-  font-size: 1.5rem; /* Adjust as needed */
+  font-size: 1.5rem;
 }
-
-
-
 
 p {
   font-size: 1.2em;
@@ -192,8 +186,7 @@ h3.cart-title {
   border: none;
 }
 
-/*--------------------------------------------------------------
-/** 2.10 Buttons
+/** Buttons
 --------------------------------------------------------------*/
 /* - Button Sizes
 ------------------------------------------------------------- */
@@ -332,10 +325,6 @@ h3.cart-title {
   text-align: right;
   display: block;
 }
-
-/*----------------------------------------------*/
-/* 2 SITE STRUCTURE */
-/*----------------------------------------------*/
 
 /* - Search Bar
 ------------------------------------------------------------- */
@@ -654,6 +643,8 @@ h3.cart-title {
 
 #billboard {
   padding-top: 150px; 
+  background: linear-gradient(to bottom, #f4faff, #e6f2fa);
+
 }
 .image-holder img {
   max-width: 100%;
@@ -900,9 +891,8 @@ h3.cart-title {
 
 
 
-/* 7. Footer
-/*----------------------------------------------*/
-/*------------ Social Icon -----------*/
+
+/*------------ Footer : Social Icon -----------*/
 .social-links svg {
   width: 42px;
   height: 42px;
@@ -984,34 +974,7 @@ h3.cart-title {
 }
 
 #footer .footer-menu p {
-  margin-top: 20px; /* Adjust as needed */
-}
-
-/* 9. About Us Page
-/*----------------------------------------------*/
-/*------------ Video Icon -----------*/
-.video-item a {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.video-item svg.video-player {
-  width: 80px;
-  height: 80px;
-  padding: 19px;
-  border-radius: 50%;
-}
-
-/* - Shop Page
---------------------------------------------------------------*/
-/* ----------- Search Bar -----------*/
-.shopify-grid select#input-sort {
-  font-size: 1.2em;
-  color: var(--dark-grey-color);
-  border: none;
-  padding: 0;
-  text-align: center;
+  margin-top: 20px; 
 }
 
 /* ----------- SideBar -----------*/
